@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 상세</title>
+
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th { background-color: #f2f2f2; text-align: center;}
+        td { text-align: center;}
+        th, td { border: 1px solid #ddd; padding: 8px;}
+        
+        .url-link { text-decoration: none; color: blue; display: inline-block; margin-top: 20px;}
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h2>회원정보 상세</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <th>회원아이디</th>
+                    <td th:text="${result.tb_users.USER_ID}"></td>
+                </tr>
+                <tr>
+                    <th>회원이름</th>
+                    <td th:text="${result.PRODUCT_DETAIL.USER_NM}"></td>
+                </tr>
+                <tr>
+                    <th>회원이메일</th>
+                    <td th:text="${result.PRODUCT_DETAIL.USER_EMAIL}"></td>
+                </tr>
+                <tr>
+                    <th>등록일시</th>
+                    <td th:text="${result.PRODUCT_DETAIL.REG_DT}"></td>
+                </tr>
+                <tr>
+                    <th>수정일시</th>
+                    <td th:text="${result.PRODUCT_DETAIL.MOD_DT}"></td>
+                </tr>
+                
+        </table>
+
+        <a class="url-link" th:href="@{'/user/list'}" th:text="목록"></a>
+    </div>    
+</body>
+</html>
